@@ -1,126 +1,372 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html lang="en">
 
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.0.1">
+  <title>Data Analitycs Bootcamp Projects</title>
 
-  <meta charset="UTF-8">
-  <title>Latitude Analysis Dashboard</title>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
 
-  <!-- Bring in our bootstrap stylesheet -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link href="./assets/dist/css/bootstrap.css" rel="stylesheet">
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
 
-  <link rel="stylesheet" href="./resources/assets/css/style.css">
-
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="album.css" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Start of navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white" id="top-navbar">
-    <!--<button type="button" class="btn btn-info">Lattitude</button>-->
-    <a class="btn btn-info" href="index.html" role="button">Lattitude</a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-md-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            Plots
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-muted" href="./visualizations/temperature.html">Max Temperature</a>
-            <a class="dropdown-item text-muted" href="./visualizations/humidity.html">Humidity</a>
-            <!--<div class="dropdown-divider"></div>-->
-            <a class="dropdown-item text-muted" href="./visualizations/cloudiness.html">Cloudiness</a>
-            <a class="dropdown-item text-muted" href="./visualizations/windspeed.html">Wind Speed</a>
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">Add some information about the album below, the author, or any other background
+              context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off
+              to some social networking sites or contact information.</p>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./visualizations/comparison.html">Comparison</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./visualizations/data.html">Data</a>
-        </li>
-
-      </ul>
-    </div>
-  </nav>
-
-  <div class="row">
-    <div class="col-md-12"> <br> </div>
-  </div>
-
-  <div class="container">
-    <!-- put all content inside of here -->
-    <session class="row">
-      <div class="col-md-8 col-xs-12">
-        <article class="description-content">
-          <h2 class="text-info">Summary: Lattitude vs. X</h2>
-          <hr class="description-hr" />
-
-          <img src="./resources/images/Fig1.png" height="260" width="240" align="left" alt="first image" />
-
-          <p class="text-justify text-muted p-linespacing">
-            The purpose of this project was to analyse how weather changes as you get closer to
-            the equador. To accomplish this analysis, we first pulled data from the OpenWeatherMap API
-            to assemble a dataset on over 500 cities.
-          </p>
-          <br>
-
-          <p class="text-justify text-muted p-linespacing">
-            After assembling the dataset, we used Matplotlib to plot various aspects of the weather vs.
-            latitude. Factors we looked at included: temperature, cloudiness, wind speed, and humidity. This site
-            provides the source data and visualizations created as part of the analysis, as well as explanations and
-            descriptions of any trends and correlations witnessed.
-          </p>
-        </article>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="https://www.linkedin.com/in/alefaraujo/?locale=en_US" target="_blank"
+                  class="text-white">Linkedin</a></li>
+              <li><a href="./resources/afa_resume.pdf" target="_blank" class="text-white">Resume</a></li>
+              <li><a href="mailto:contactca.afa@gmail.com" class="text-white">Email me</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2"
+            viewBox="0 0 24 24" focusable="false">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+            <circle cx="12" cy="13" r="4" /></svg>
+          <strong>Projects</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+          aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-      <div class="col-md-4 col-xs-12">
-        <div class="visualization-content">
-          <h3 class="text-info">Visualization</h3>
-          <hr class="description-hr" />
-          <div class="row">
-            <div class="col-md-6 col-sm-3">
-              <!-- Figure 1 -->
-              <a href="./visualizations/temperature.html"><img src="./resources/images/Fig1.png"
-                  class="visualization-image" alt="Latitude vs. Max Temperature"></a>
+  <main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1>My Projects</h1>
+        <p class="lead text-muted">Something about the Projects.Something about the Projects.Something about the
+          Projects.Something about the Projects.</p>
+        <!--<p>
+        <a href="#" class="btn btn-primary my-2">Main call to action</a>
+        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+      </p>-->
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="img/stockmarket.jpg" width="100%" height="225" alt="Card image">
+              <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail">
+              <title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+            </svg>-->
+              <div class="card-body">
+                <p class="card-text"><strong>VBA programming</strong><br>
+                  A project to analyze real stock market data using VBA scripting.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary"
+                      href="https://github.com/alefaraujo-ca/databootcamp-homework/tree/master/VBA-challenge"
+                      target="_blank" role="button">View</a>
+                    <!--<button type="button" class="btn btn-sm btn-outline-secondary">View</button>-->
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
             </div>
-            <div class="col-md-6 col-sm-3">
-              <!-- Figure 2 -->
-              <a href="./visualizations/temperature.html"><img src="./resources/images/Fig2.png"
-                  class="visualization-image" alt="Latitude vs. Humidity"></a>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="img/python.png" width="100%" height="225" alt="Card image">
+              <div class="card-body">
+                <p class="card-text"><strong>Python scripts</strong><br>
+                  1. Analyze the financial data.<br>
+                  2. Analyze the votes on a poll.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary"
+                      href="https://github.com/alefaraujo-ca/databootcamp-homework/tree/master/python-challenge"
+                      target="_blank" role="button">View</a>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
             </div>
-            <div class="col-md-6 col-sm-3">
-              <!-- Figure 3? -->
-              <a href="./visualizations/temperature.html"><img src="./resources/images/Fig3.png"
-                  class="visualization-image" alt="Latitude vs. Cloudiness"></a>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="img/weather_api.jpg" width="100%" height="225" alt="Card image">
+              <div class="card-body">
+                <p class="card-text"><strong>APIs</strong><br>
+                  Analyze weather data using Python requests, APIs, and JSON traversals.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary"
+                      href="https://github.com/alefaraujo-ca/databootcamp-homework/tree/master/python-api-challenge"
+                      target="_blank" role="button">View</a>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
             </div>
-            <div class="col-md-6 col-sm-3">
-              <!-- Figure 4 -->
-              <a href="./visualizations/temperature.html"><img src="./resources/images/Fig4.png"
-                  class="visualization-image" alt="Latitude vs. Wind Speed"></a>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="img/7-animated-scatter.gif" width="100%" height="225" alt="Card image">
+              <div class="card-body">
+                <p class="card-text"><strong>D3:</strong>
+                  Data visualization at a major metro paper. Use D3 to create charts, graphs, and interactive elements.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary"
+                      href="https://github.com/alefaraujo-ca/databootcamp-homework/tree/master/D3-challenge"
+                      target="_blank" role="button">View</a>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="img/javascript.jpg" width="100%" height="225" alt="Card image">
+              <div class="card-body">
+                <p class="card-text"><strong>JavaScript and DOM Manipulation</strong><br>
+                  JavaScript, HTML, CSS, and D3.js to create a web visualization page.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary"
+                      href="https://github.com/alefaraujo-ca/databootcamp-homework/tree/master/javascript-challenge"
+                      target="_blank" role="button">View</a>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="img/mapUS.png" width="100%" height="225" alt="Card image">
+              <div class="card-body">
+                <p class="card-text"><strong>Visualizing Data with Leaflet</strong><br>
+                  Visualize United States Geological Survey (USGS) earthquake data.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary"
+                      href="https://github.com/alefaraujo-ca/databootcamp-homework/tree/master/leaflet-challenge"
+                      target="_blank" role="button">View</a>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="img/laboratory.jpg" width="100%" height="225" alt="Card image">
+              <div class="card-body">
+                <p class="card-text"><strong>Matplotlib - The Power of Plots</strong><br>
+                  Visualize United States Geological Survey (USGS) earthquake data.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary"
+                      href="https://github.com/alefaraujo-ca/databootcamp-homework/tree/master/leaflet-challenge"
+                      target="_blank" role="button">View</a>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="img/herosofpy.png" width="100%" height="225" alt="Card image">
+              <div class="card-body">
+                <p class="card-text"><strong>Data analytics with Pandas</strong><br>
+                  Use Pandas Library and Jupyter Notebook to generate meaningful insights.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary"
+                      href="https://github.com/alefaraujo-ca/databootcamp-homework/tree/master/pandas-challenge"
+                      target="_blank" role="button">View</a>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="img/plotly.png" width="100%" height="225" alt="Card image">
+              <div class="card-body">
+                <p class="card-text"><strong>Plot.ly - Belly Button Biodiversity</strong><br>
+                  Build an interactive dashboard to explore the Belly Button Biodiversity dataset.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary"
+                      href="https://github.com/alefaraujo-ca/databootcamp-homework/tree/master/plotly-challenge"
+                      target="_blank" role="button">View</a>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="img/SQL.png" width="100%" height="225" alt="Card image">
+              <div class="card-body">
+                <p class="card-text"><strong>PostgreSQL</strong><br>
+                  Data Modeling, Data Engineering and Data Analysis using an Employee Database.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary"
+                      href="https://github.com/alefaraujo-ca/databootcamp-homework/tree/master/sql-challenge"
+                      target="_blank" role="button">View</a>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="img/surfs-up.png" width="100%" height="225" alt="Card image">
+              <div class="card-body">
+                <p class="card-text"><strong>SQLAlchemy - Surfs Up!</strong><br>
+                  Perform basic analysis and data exploration of a climate database.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary"
+                      href="https://github.com/alefaraujo-ca/databootcamp-homework/tree/master/sqlalchemy-challenge"
+                      target="_blank" role="button">View</a>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="img/citi-bike.jpg" width="100%" height="225" alt="Card image">
+              <div class="card-body">
+                <p class="card-text"><strong>Tableau - Citi Bike Analytics</strong><br>
+                  Dashboards to visualize data from the largest bike sharing program in the US.
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary"
+                      href="https://github.com/alefaraujo-ca/databootcamp-homework/tree/master/tableau-challenge"
+                      target="_blank" role="button">View</a>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="img/bootstrap.png" width="100%" height="225" alt="Card image">
+              <div class="card-body">
+                <p class="card-text"><strong>Bootstrap - Web Dashboard</strong><br>
+                  Visualization website to plot weather data generated by our weather APIs. 
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary"
+                      href="https://github.com/alefaraujo-ca/databootcamp-homework/tree/master/web-design-challenge"
+                      target="_blank" role="button">View</a>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="img/mission_to_mars.png" width="100%" height="225" alt="Card image">
+              <div class="card-body">
+                <p class="card-text"><strong>Web Scraping - Mission to Mars</strong><br>
+                  Scrape websites for data related to Mission to Mars and display in a HTML page. 
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a class="btn btn-sm btn-outline-secondary"
+                      href="https://github.com/alefaraujo-ca/databootcamp-homework/tree/master/web-scraping-challenge"
+                      target="_blank" role="button">View</a>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </session>
-  </div>
+    </div>
+
+  </main>
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="./assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+  <script src="./assets/dist/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
